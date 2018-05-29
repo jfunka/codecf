@@ -180,10 +180,11 @@ void solve() {
         if (num_bad >= k-1) {
             num_bad -= (k-1), M--;
         } else if (num_bad > 0) {
-            num_bad = 0, M--;
+            M--;
             for (int j = M, kk = k-num_bad-1; j >= 0 && kk > 0; j--, kk--, M--) {
                 toadd = min(toadd, a[j]);
             }
+            num_bad = 0;
         } else {
             M--;
             for (int j = M, kk = k-1; j >= 0 && kk > 0; j--, kk--, M--) {
